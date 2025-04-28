@@ -9,32 +9,68 @@
         body {
             margin: 0;
             font-family: 'Microsoft JhengHei', sans-serif;
-            background-color: #fdf6f0;
-            color: #333;
+            color: #fff; /* 文字颜色设为白色 */
+            background-color: #000; /* 设置背景为黑色 */
+            overflow: hidden; /* 防止背景溢出 */
+            position: relative; /* 需要给星空背景定位 */
         }
 
+        /* 动态星空背景效果 */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat; /* 星空背景 */
+            z-index: -1;
+            animation: moveBackground 150s linear infinite, starFlicker 3s ease-in-out infinite;
+        }
+
+        /* 背景动画，使背景移动 */
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 2000px 2000px; /* 背景会向右下角移动 */
+            }
+        }
+
+        /* 星星闪烁效果 */
+        @keyframes starFlicker {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Header 样式 */
         header {
-            background-color: #ffddc1;
             padding: 40px 0;
             text-align: center;
         }
 
+        /* Section 样式 */
         section {
             padding: 40px 20px;
             max-width: 800px;
             margin: auto;
+            color: #003366; /* 设置section的文字为深蓝色 */
         }
 
         article {
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
             padding: 20px;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             border-radius: 8px;
         }
 
+        /* Footer 样式 */
         footer {
-            background-color: #ffd6d6;
             padding: 30px 0;
             text-align: center;
         }
@@ -68,30 +104,24 @@
 </head>
 <body>
 
+    <!-- 动态星空背景 -->
+    <div class="stars"></div>
+
     <header>
         <h1>歡迎來到我的部落格</h1>
     </header>
 
     <section>
-        <article>
-            <h2>hoca 整天的行程</h2>
-            <p>早上7.30 就起来了，hmm 感觉没什么事做，先看一下 afk journey，唉 ivy 和他老爸多少年没有上线了。</p>
-            <p>开始做 IELTS oh damn 我的英文 so sucks hahaha 开始想念 ivy，看看那个人几点睡觉，我靠 1.30 还不睡觉</p>
-            <p>发呆看一下影片，下午去运动，我老婆生气气问我是不是不爱他，我马上打电话给她，结果她在 laosai</p>
-            <p>做完运动，去吃个午餐，回到家没有 冷气 walao 不能 tahan，读书都不能专心</p>
+        <article> 
+            <h2>哦哦 原来是这样加 header </h2>
+            <p>记录一下今天的事情,今天没什么好说的，tabata 做了 5 组，读一些 IELTS 和 spinal related PPT , 最后玩一下 html ，写一下 blog</p>
             <p><strong>作者：</strong>李世源</p>
         </article>
 
         <article>
-            <h2>ivy 一天的行程</h2>
-            <p> 喵 又是自然醒美好的一天，看看时间 哦 差不多1 点，爽啊，昨天看死神到半夜 4 点，hocalee 是什么 滚远远啦~</p>
-            <p>人逢喜事精神爽，独自个人扫全部，肛门臃肿嘴巴爽， 海底捞完捞塞</p>
-            <p>发牢骚一下，死人头 hocalee 不找我是怎样，等下还要去洗脸</p>
-            <p>卧槽，洗了那么久电话都快没电了，快点啦 还要塞车，前面是不是车祸了</p>
-            <p>回到家美滋滋，先自己充电 1 个小时，等下吃晚餐</p>
-            <p>huhuhu 我的韩剧和死神，我来了</p>
-            <p>卧槽 9 点了，我还没投履历，等下去投吧 还要开那个死人电脑，一直开不到 又没有 WiFi sienz</p>
-            <p><strong>作者：</strong>世源的老婆(ivy)</p>
+            <h2>睡睡没烦恼</h2>
+            <p>回去就睡到晚上 11.30 吧</p>
+            <p><strong>作者：</strong>你猜猜</p>
         </article>
     </section>
 
